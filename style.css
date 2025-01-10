@@ -1,44 +1,121 @@
-body {
-    background-color: beige;
+/* Simples of resets */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+body {
+  background-color: rgb(37, 37, 37);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 2vw;
 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+}
 .calculator {
-    display: grid;
-
-    grid-template-areas: 
+  font-family: 'IBM Plex Mono', serif;
+  display: grid;
+  grid-template-areas:
     'display display'
     'buttons action';
-    grid-template-columns: repeat(12, 1fr);
-    
-    .display {
-        grid-area: display;
-        background-color: orange;
-        grid-column: span 12;
-    }
+  grid-template-columns: repeat(12, 1fr);
+  width: 100%;
+  max-width: 600px;
 
-    .buttons {
-        grid-area: buttons;
-        display: grid;
-        grid-template-columns: subgrid;
-        grid-column: span 9;
-        background-color:red ;
-        > * {
-            border: 1 red solid;
-            grid-column: span 3;
+  gap: 1rem;
+  background-color: #2f3f67;
+  padding: 1rem 1rem 2rem 1rem;
 
-            background-color: orange;
-        }
-    }
-    .action {
-        display: grid;
-        grid-area: action;
-        grid-template-columns: subgrid;
-        grid-column: span 3;
-        
-        background-color: purple;
-        > * {
-            grid-column: span 3;
+  box-shadow: 0px 10px 100px red;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: inset 0px -10px 2px rgba(0, 0, 0, 0.464);
 
-        }
+  .display {
+    position: relative;
+    grid-area: display;
+    font-size: 2rem;
+    grid-column: span 12;
+    background-color: #1d1620;
+    padding: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.12);
+    .brand {
+      font-size: 1.5rem;
+      color: white;
+      text-transform: uppercase;
+      font-weight: 600;
     }
+    .result {
+      padding: 20px;
+      background-color: #77aba6;
+      border-radius: 0.5rem;
+      grid-column: span 12;
+      box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.314);
+    }
+    ::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.234), rgb(0, 0, 0));
+      opacity: 0.2;
+    }
+  }
+
+  .buttons {
+    grid-area: buttons;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: span 9;
+    gap: 0.5rem;
+    > * {
+      border: 1 rgb(103, 103, 103) solid;
+      grid-column: span 3;
+      background-color: rgb(89, 89, 89);
+    }
+  }
+  button {
+    color: white;
+    border-radius: 0.25rem;
+    font-size: 100%;
+    padding: 5% 5% 10% 5%;
+    border: none;
+    height: 100%;
+    box-shadow: inset 0px 0 1px rgba(255, 255, 255, 0.1), inset -2px -5px 2px rgba(0, 0, 0, 0.2),
+      1px 1px 2px rgb(0, 0, 0);
+    &:hover {
+      padding: 6% 5% 9% 5%;
+
+      box-shadow: inset 0px 0px 0px rgba(74, 38, 38, 0.5), inset -2px -2px 2px rgba(129, 31, 31, 0);
+    }
+  }
+  .action {
+    display: grid;
+    grid-area: action;
+    grid-column: span 3;
+    gap: 0.5rem;
+    > * {
+      grid-column: span 3;
+    }
+    button {
+      background-color: rgb(69, 110, 255);
+    }
+  }
 }
+
+@media;
