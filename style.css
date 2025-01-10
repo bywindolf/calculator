@@ -20,10 +20,12 @@ body {
         grid-area: buttons;
         display: grid;
         grid-template-columns: subgrid;
-        grid-column: span 8;
+        grid-column: span 9;
         background-color:red ;
         > * {
             border: 1 red solid;
+            grid-column: span 3;
+
             background-color: orange;
         }
     }
@@ -31,7 +33,12 @@ body {
         display: grid;
         grid-area: action;
         grid-template-columns: subgrid;
-        grid-column: span 4;
-        background-color: purple;;
+        grid-column: span 3;
+        
+        background-color: purple;
+        > * {
+            grid-column: span 3;
+
+        }
     }
 }

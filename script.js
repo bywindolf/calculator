@@ -8,5 +8,5 @@ function addToCalculation(number) {
 }
 
 function updateResult(value){
-document.querySelector('.result').textContent = value;
+    document.querySelector('.result').textContent = value; // Update result div
 }
