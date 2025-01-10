@@ -1,0 +1,37 @@
+body {
+    background-color: beige;
+}
+
+.calculator {
+    display: grid;
+
+    grid-template-areas: 
+    'display display'
+    'buttons action';
+    grid-template-columns: repeat(12, 1fr);
+    
+    .display {
+        grid-area: display;
+        background-color: orange;
+        grid-column: span 12;
+    }
+
+    .buttons {
+        grid-area: buttons;
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-column: span 8;
+        background-color:red ;
+        > * {
+            border: 1 red solid;
+            background-color: orange;
+        }
+    }
+    .action {
+        display: grid;
+        grid-area: action;
+        grid-template-columns: subgrid;
+        grid-column: span 4;
+        background-color: purple;;
+    }
+}
